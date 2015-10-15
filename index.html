@@ -1,0 +1,1425 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AreWePlayingYet? — A pragmatic HTML5 Audio test suite</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="author" content="SoundCloud - Tomás Senart, Yves Van Goethem, Kasper Lahti, Matas Petrikas">
+  <meta name="description" content="AreWePlayingYet? - A pragmatic HTML5 Audio test suite">
+  <link rel="stylesheet" href="css/prettify.css">
+  <link rel="stylesheet" href="css/awpy.css">
+  <link rel="stylesheet" href="css/mobile.css" media="handheld, only screen and (max-device-width:540px)">
+  <link rel="shortcut icon" href="images/favicon.ico">
+</head>
+<body>
+  <div class="container">
+    <div class="content multi">
+      <div class="wrapper-header">
+        <header>
+          <div class="page-header">
+            <div class="play">
+              <button class="run btn big"><span class="icon"><span><img src="images/throbber.gif" alt="Running" title="Running"><span class="result"></span></button>
+              <label><span class="waiting">Run All Tests</span><span class="running">Running…</span></label>
+            </div>
+            <div class="display">
+              <div>
+                <a href="/">
+                  <h1>Are We Playing Yet?</h1>
+                  <h2>A pragmatic HTML5 Audio test suite</h2>
+                  <button class="info-small">i</button>
+                </a>
+                <p class="info-description hide">This is an <strong>open and public</strong> initiative to bring more harmony into HTML5 Audio implementations.
+  The specifications are missing some features and sometime leaves room for interpretation.
+  We want to un-mute the Web and make Audio rock! If you feel the same, you can <strong>report browsers bugs</strong>, <a href="https://github.com/soundcloud/areweplayingyet/">write tests</a>, <a href="https://github.com/soundcloud/areweplayingyet/issues">fill issues</a> and join <a href="http://twitter.com/areweplayingyet">our conversation</a>.
+                </p>
+              </div>
+            </div>
+            <div class="submit">
+              <a class="github btn big" href="/get-involved">Contribute</a>
+              <label>Get involved!</label>
+            </div>
+          </div>
+        </header>
+      </div>
+      <table id="tests" class="zebra-striped">
+        <thead>
+          <tr>
+            <td>&nbsp;</td>
+            <td class="name">Name</td>
+            <td class="genre">Genre</td>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="support-seeking-unbuffered-position-ogg"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/support-seeking-unbuffered-position-ogg" title="Details for Seeking to unbuffered position with continuous playback after seeking (Ogg)">Seeking to unbuffered position with continuous playback after seeking (Ogg)</a>
+              </td>
+              <td class="genre">support</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="support-seeking-unbuffered-position-mp3"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/support-seeking-unbuffered-position-mp3" title="Details for Seeking to unbuffered position with continuous playback after seeking (MP3)">Seeking to unbuffered position with continuous playback after seeking (MP3)</a>
+              </td>
+              <td class="genre">support</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="support-seeking-unbuffered-position-aac"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/support-seeking-unbuffered-position-aac" title="Details for Seeking to unbuffered position with continuous playback after seeking (AAC)">Seeking to unbuffered position with continuous playback after seeking (AAC)</a>
+              </td>
+              <td class="genre">support</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="support-multiple-playing"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/support-multiple-playing" title="Details for Multiple Audio objects playing at the same time">Multiple Audio objects playing at the same time</a>
+              </td>
+              <td class="genre">support</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="support-hot-swapping-src"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/support-hot-swapping-src" title="Details for Hot swapping audio src">Hot swapping audio src</a>
+              </td>
+              <td class="genre">support</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="support-format-wav"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/support-format-wav" title="Details for Supports WAV format">Supports WAV format</a>
+              </td>
+              <td class="genre">support</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="support-format-opus"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/support-format-opus" title="Details for Supports Opus format">Supports Opus format</a>
+              </td>
+              <td class="genre">support</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="support-format-ogg"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/support-format-ogg" title="Details for Supports Ogg format">Supports Ogg format</a>
+              </td>
+              <td class="genre">support</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="support-format-mp3"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/support-format-mp3" title="Details for Supports MP3 format">Supports MP3 format</a>
+              </td>
+              <td class="genre">support</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="support-format-aac"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/support-format-aac" title="Details for Supports AAC format">Supports AAC format</a>
+              </td>
+              <td class="genre">support</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="support-crossorigin-ssl-redirection"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/support-crossorigin-ssl-redirection" title="Details for Follows 30x responses on src (cross domain ssl redirection)">Follows 30x responses on src (cross domain ssl redirection)</a>
+              </td>
+              <td class="genre">support</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="support-consistent-playback-delay"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/support-consistent-playback-delay" title="Details for Consistent time between play() and actual playback (&lt; 20ms)">Consistent time between play() and actual playback (&lt; 20ms)</a>
+              </td>
+              <td class="genre">support</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="property-volume"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/property-volume" title="Details for Property &quot;volume&quot;">Property &quot;volume&quot;</a>
+              </td>
+              <td class="genre">property</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="property-seeking"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/property-seeking" title="Details for Property &quot;seeking&quot;">Property &quot;seeking&quot;</a>
+              </td>
+              <td class="genre">property</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="property-seekable"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/property-seekable" title="Details for Property &quot;seekable&quot;">Property &quot;seekable&quot;</a>
+              </td>
+              <td class="genre">property</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="property-played"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/property-played" title="Details for Property &quot;played&quot;">Property &quot;played&quot;</a>
+              </td>
+              <td class="genre">property</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="property-playbackRate"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/property-playbackRate" title="Details for Property &quot;playbackRate&quot;">Property &quot;playbackRate&quot;</a>
+              </td>
+              <td class="genre">property</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="property-paused"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/property-paused" title="Details for Property &quot;paused&quot;">Property &quot;paused&quot;</a>
+              </td>
+              <td class="genre">property</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="property-muted"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/property-muted" title="Details for Property &quot;muted&quot;">Property &quot;muted&quot;</a>
+              </td>
+              <td class="genre">property</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="property-duration"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/property-duration" title="Details for Property &quot;duration&quot;">Property &quot;duration&quot;</a>
+              </td>
+              <td class="genre">property</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="property-defaultPlaybackRate"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/property-defaultPlaybackRate" title="Details for Property &quot;defaultPlaybackRate&quot;">Property &quot;defaultPlaybackRate&quot;</a>
+              </td>
+              <td class="genre">property</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="property-currentTime"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/property-currentTime" title="Details for Property &quot;currentTime&quot;">Property &quot;currentTime&quot;</a>
+              </td>
+              <td class="genre">property</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="property-buffered"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/property-buffered" title="Details for Property &quot;buffered&quot;">Property &quot;buffered&quot;</a>
+              </td>
+              <td class="genre">property</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="event-volumechange"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/event-volumechange" title="Details for Event &quot;volumechange&quot;">Event &quot;volumechange&quot;</a>
+              </td>
+              <td class="genre">event</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="event-timeupdate"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/event-timeupdate" title="Details for Event &quot;timeupdate&quot;">Event &quot;timeupdate&quot;</a>
+              </td>
+              <td class="genre">event</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="event-suspend"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/event-suspend" title="Details for Event &quot;suspend&quot;">Event &quot;suspend&quot;</a>
+              </td>
+              <td class="genre">event</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="event-stalled"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/event-stalled" title="Details for Event &quot;stalled&quot;">Event &quot;stalled&quot;</a>
+              </td>
+              <td class="genre">event</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="event-seeking"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/event-seeking" title="Details for Event &quot;seeking&quot;">Event &quot;seeking&quot;</a>
+              </td>
+              <td class="genre">event</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="event-seeked"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/event-seeked" title="Details for Event &quot;seeked&quot;">Event &quot;seeked&quot;</a>
+              </td>
+              <td class="genre">event</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="event-ratechange"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/event-ratechange" title="Details for Event &quot;ratechange&quot;">Event &quot;ratechange&quot;</a>
+              </td>
+              <td class="genre">event</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="event-progress"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/event-progress" title="Details for Event &quot;progress&quot;">Event &quot;progress&quot;</a>
+              </td>
+              <td class="genre">event</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="event-playing"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/event-playing" title="Details for Event &quot;playing&quot;">Event &quot;playing&quot;</a>
+              </td>
+              <td class="genre">event</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="event-play"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/event-play" title="Details for Event &quot;play&quot;">Event &quot;play&quot;</a>
+              </td>
+              <td class="genre">event</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="event-pause"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/event-pause" title="Details for Event &quot;pause&quot;">Event &quot;pause&quot;</a>
+              </td>
+              <td class="genre">event</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="event-loadstart"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/event-loadstart" title="Details for Event &quot;loadstart&quot;">Event &quot;loadstart&quot;</a>
+              </td>
+              <td class="genre">event</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="event-loadedmetadata"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/event-loadedmetadata" title="Details for Event &quot;loadedmetadata&quot;">Event &quot;loadedmetadata&quot;</a>
+              </td>
+              <td class="genre">event</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="event-loadeddata"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/event-loadeddata" title="Details for Event &quot;loadeddata&quot;">Event &quot;loadeddata&quot;</a>
+              </td>
+              <td class="genre">event</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="event-error"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/event-error" title="Details for Event &quot;error&quot;">Event &quot;error&quot;</a>
+              </td>
+              <td class="genre">event</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="event-ended"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/event-ended" title="Details for Event &quot;ended&quot;">Event &quot;ended&quot;</a>
+              </td>
+              <td class="genre">event</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="event-emptied"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/event-emptied" title="Details for Event &quot;emptied&quot;">Event &quot;emptied&quot;</a>
+              </td>
+              <td class="genre">event</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="event-durationchange"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/event-durationchange" title="Details for Event &quot;durationchange&quot;">Event &quot;durationchange&quot;</a>
+              </td>
+              <td class="genre">event</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="event-canplaythrough"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/event-canplaythrough" title="Details for Event &quot;canplaythrough&quot;">Event &quot;canplaythrough&quot;</a>
+              </td>
+              <td class="genre">event</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="event-canplay"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/event-canplay" title="Details for Event &quot;canplay&quot;">Event &quot;canplay&quot;</a>
+              </td>
+              <td class="genre">event</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="event-abort"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/event-abort" title="Details for Event &quot;abort&quot;">Event &quot;abort&quot;</a>
+              </td>
+              <td class="genre">event</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="attribute-preload-metadata"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/attribute-preload-metadata" title="Details for Attribute &quot;preload&quot; with value &quot;metadata&quot;">Attribute &quot;preload&quot; with value &quot;metadata&quot;</a>
+              </td>
+              <td class="genre">attribute</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="attribute-loop"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/attribute-loop" title="Details for Attribute &quot;loop&quot;">Attribute &quot;loop&quot;</a>
+              </td>
+              <td class="genre">attribute</td>
+            </tr>
+          
+            <tr class="test">
+              <td>
+                <button class="btn run small" data-test-name="attribute-autoplay"><span>▶</span><img src="images/throbber.gif" alt="Running" title="Running"></button>
+              </td>
+              <td class="name">
+                <a href="/attribute-autoplay" title="Details for Attribute &quot;autoplay&quot;">Attribute &quot;autoplay&quot;</a>
+              </td>
+              <td class="genre">attribute</td>
+            </tr>
+          
+        </tbody>
+      </table>
+    </div>
+    <footer>
+      <div>
+        <p>Copyright &copy; 2011, SoundCloud Ltd., Tomás Senart, Yves Van Goethem</p>
+        <p>"Are We Playing Yet?" is distributed under the terms of the <a href="https://github.com/soundcloud/areweplayingyet/blob/master/LICENSE">BSD License</a></p>
+        <div class="logo-icon"></div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/augment-0.3.1.min.js"></script>
+  <script src="js/jquery-1.7.min.js"></script>
+  <script src="js/prettify.js"></script>
+  <script src="js/awpy.js"></script>
+  <script src="js/runner.js"></script>
+  <script src="js/ga.js"></script>
+  <script>
+    AWPY.tests.init([({
+  name: 'support-seeking-unbuffered-position-ogg',
+  description: 'Seeking to unbuffered position with continuous playback after seeking (Ogg)',
+  assert: function(finish) {
+    var audio = this.audio,
+        seekedTime,
+        counter = 0,
+        result = true,
+        timeout = false;
+
+    audio.addEventListener('seeked', function() {
+      if (audio.currentTime < seekedTime) {
+        finish(false);
+      } else {
+        clearTimeout(timeout);
+
+        audio.play();
+
+        audio.addEventListener('timeupdate', function() {
+          if (++counter > 30) {
+            finish(result);
+          } else if (!audio.paused && audio.currentTime > seekedTime) {
+            result = true;
+          } else {
+            result = false;
+          }
+        }, false);
+      }
+    }, false);
+
+    audio.addEventListener('loadedmetadata', function() {
+      audio.volume = 0;
+      audio.currentTime = seekedTime = AWPY.sound.long.duration * 0.9;
+      timeout = setTimeout(finish.bind(null, false), 3000);
+    }, false);
+
+    audio.preload = 'metadata';
+    //Override default config with specific codec
+    audio.src = AWPY.sound.long.stream_url(false, 'ogg');
+  }
+})
+,({
+  name: 'support-seeking-unbuffered-position-mp3',
+  description: 'Seeking to unbuffered position with continuous playback after seeking (MP3)',
+  assert: function(finish) {
+    var audio = this.audio,
+        seekedTime,
+        counter = 0,
+        result = true,
+        timeout = false;
+
+    audio.addEventListener('seeked', function() {
+      if (audio.currentTime < seekedTime) {
+        finish(false);
+      } else {
+        clearTimeout(timeout);
+
+        audio.play();
+
+        audio.addEventListener('timeupdate', function() {
+          if (++counter > 30) {
+            finish(result);
+          } else if (!audio.paused && audio.currentTime > seekedTime) {
+            result = true;
+          } else {
+            result = false;
+          }
+        }, false);
+      }
+    }, false);
+
+    audio.addEventListener('loadedmetadata', function() {
+      audio.volume = 0;
+      audio.currentTime = seekedTime = AWPY.sound.long.duration * 0.9;
+      timeout = setTimeout(finish.bind(null, false), 3000);
+    }, false);
+
+    audio.preload = 'metadata';
+    //Override default config with specific codec
+    audio.src = AWPY.sound.long.stream_url(false, 'mp3');
+  }
+})
+,({
+  name: 'support-seeking-unbuffered-position-aac',
+  description: 'Seeking to unbuffered position with continuous playback after seeking (AAC)',
+  assert: function(finish) {
+    var audio = this.audio,
+        seekedTime,
+        counter = 0,
+        result = true,
+        timeout = false;
+
+    audio.addEventListener('seeked', function() {
+      if (audio.currentTime < seekedTime) {
+        finish(false);
+      } else {
+        clearTimeout(timeout);
+
+        audio.play();
+
+        audio.addEventListener('timeupdate', function() {
+          if (++counter > 30) {
+            finish(result);
+          } else if (!audio.paused && audio.currentTime > seekedTime) {
+            result = true;
+          } else {
+            result = false;
+          }
+        }, false);
+      }
+    }, false);
+
+    audio.addEventListener('loadedmetadata', function() {
+      audio.volume = 0;
+      audio.currentTime = seekedTime = AWPY.sound.long.duration * 0.9;
+      timeout = setTimeout(finish.bind(null, false), 3000);
+    }, false);
+
+    audio.preload = 'metadata';
+    //Override default config with specific codec
+    audio.src = AWPY.sound.long.stream_url(false, 'aac');
+  }
+})
+,({
+  name: 'support-multiple-playing',
+  description: 'Multiple Audio objects playing at the same time',
+  assert: function(finish) {
+    var audio  = this.audio;
+    var audio2 = new Audio();
+    this.audio = [audio, audio2];
+    var counter = 0;
+
+    this.audio.forEach(function(audio) {
+      audio.addEventListener('loadedmetadata', function() {
+        audio.volume = 0;
+        audio.play();
+      }, false);
+
+      audio.addEventListener('playing', function() {
+        if (++counter == 2) {
+          finish(true);
+        }
+      }, false);
+    });
+
+    audio.src  = AWPY.sound.mini.stream_url();
+    audio2.src = AWPY.sound.mini.stream_url();
+  }
+})
+,({
+  name: 'support-hot-swapping-src',
+  description: 'Hot swapping audio src',
+  longdesc: 'Audio should allow src changes without re-initializing the object.',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('loadedmetadata', function() {
+      audio.removeEventListener('loadedmetadata', arguments.callee, false);
+      audio.volume = 0.5;
+      audio.addEventListener('loadedmetadata', function() {
+        finish(audio.volume === 0.5);
+      }, false);
+      audio.src = AWPY.sound.short.stream_url();
+    }, false);
+
+    audio.src = AWPY.sound.mini.stream_url();
+  }
+})
+,({
+  name: 'support-format-wav',
+  description: 'Supports WAV format',
+  assert: function(finish) {
+    var audio = this.audio;
+    finish(/probably|maybe/.test(audio.canPlayType('audio/wav; codecs="1"')));
+  }
+})
+,({
+  name: 'support-format-opus',
+  description: 'Supports Opus format',
+  spec: 'http://www.opus-codec.org/',
+  assert: function(finish) {
+    var audio = this.audio;
+    finish(/probably|maybe/.test(audio.canPlayType('audio/ogg; codecs="opus"')));
+  }
+})
+,({
+  name: 'support-format-ogg',
+  description: 'Supports Ogg format',
+  reports: {
+    safari: {
+      desc: 'Bug 42750 - Live OGG streaming using HTML5 audio or video tag does not work ',
+      link: 'https://bugs.webkit.org/show_bug.cgi?id=42750#c3'
+    }
+  },
+  assert: function(finish) {
+    var audio = this.audio;
+    finish(/probably|maybe/.test(audio.canPlayType('audio/ogg; codecs="vorbis"')));
+  }
+})
+,({
+  name: 'support-format-mp3',
+  description: 'Supports MP3 format',
+  reports: {
+    firefox: {
+      desc: 'Bug 562730 - Reproducing Mp3 files with html5 ',
+      link: 'https://bugzilla.mozilla.org/show_bug.cgi?id=562730'
+    },
+    opera: {
+      desc: 'Same licensing issue as Firefox'
+    }
+  },
+  assert: function(finish) {
+    var audio = this.audio;
+    finish(/probably|maybe/.test(audio.canPlayType('audio/mpeg; codecs="mp3"')));
+  }
+})
+,({
+  name: 'support-format-aac',
+  description: 'Supports AAC format',
+  assert: function(finish) {
+    var audio = this.audio;
+    finish(/probably|maybe/.test(audio.canPlayType('audio/mp4; codecs="mp4a.40.2"')));
+  }
+})
+,({
+  name: 'support-crossorigin-ssl-redirection',
+  description: 'Follows 30x responses on src (cross domain ssl redirection)',
+  longdesc: 'Audio should follow cross-domain redirections from http to https, this bug was found in Android & IEMobile',
+  reports: {
+    android: {
+      desc: 'Issue 18134: 	Web Browser: HTML5 Audio https->http redirects fail',
+      link: 'http://code.google.com/p/android/issues/detail?id=18134&can=1&q=audio%20redirect%20https&colspec=ID%20Type%20Status%20Owner%20Summary%20Stars'
+    },
+    ieMobile: {
+      desc: 'Equivalent bug as Android on IE Mobile 9'
+    }
+  },
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('loadedmetadata', function() {
+      finish(true);
+    }, false);
+
+    audio.src = AWPY.sound.short.stream_url(true) + '/redirect';
+  }
+})
+,({
+  name: 'support-consistent-playback-delay',
+  description: 'Consistent time between play() and actual playback (< 20ms)',
+  assert: function(finish) {
+    var audio = this.audio, playTime;
+
+    audio.addEventListener('playing', function() {
+      finish(Date.now() - playTime < 20);
+    }, false);
+
+    audio.addEventListener('canplay', function() {
+      audio.volume = 0;
+      playTime = Date.now();
+      audio.play();
+    }, false);
+
+    audio.src = AWPY.sound.short.stream_url();
+  }
+})
+,({
+  name: 'property-volume',
+  description: 'Property "volume"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#dom-media-volume',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    if (!('volume' in audio)) {
+      finish(false);
+    }
+
+    audio.volume = 0.5;
+    finish(audio.volume === 0.5);
+  }
+})
+,({
+  name: 'property-seeking',
+  description: 'Property "seeking"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#dom-media-seeking',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    if (!('seeking' in audio)) {
+      finish(false);
+    }
+
+    audio.addEventListener('loadedmetadata', function() {
+      audio.currentTime = 100;
+      finish(audio.seeking);
+    }, false);
+
+    audio.src = AWPY.sound.short.stream_url();
+  }
+})
+,({
+  name: 'property-seekable',
+  description: 'Property "seekable"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#dom-media-seekable',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('loadedmetadata', function() {
+      finish(audio.seekable && audio.seekable.length);
+    }, false);
+
+    audio.src = AWPY.sound.mini.stream_url();
+  }
+})
+,({
+  name: 'property-played',
+  description: 'Property "played"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#dom-media-played',
+  reports: {
+    firefox: {
+      desc: 'Patch should get landed soon.',
+      link: 'https://bugzilla.mozilla.org/show_bug.cgi?id=462959'
+    }
+  },
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('timeupdate', function() {
+      if (audio.currentTime > 0) {
+        try {
+          finish(audio.played.length);
+        } catch (e) {
+          finish(false);
+        }
+      }
+    }, false);
+
+    audio.addEventListener('loadedmetadata', function() {
+      audio.volume = 0;
+      audio.play();
+    }, false);
+
+    audio.src = AWPY.sound.mini.stream_url();
+  }
+})
+,({
+  name: 'property-playbackRate',
+  description: 'Property "playbackRate"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#dom-media-playbackrate',
+  reports: {
+    firefox: {
+      desc: 'Bug 495040 - Implement playbackRate and related bits ',
+      link: 'https://bugzilla.mozilla.org/show_bug.cgi?id=495040'
+    }
+  },
+  assert: function(finish) {
+    var audio = this.audio;
+
+    if (!('playbackRate' in audio)) {
+      finish(false);
+    }
+
+    audio.playbackRate = 0.5;
+    finish(audio.playbackRate === 0.5);
+  }
+})
+,({
+  name: 'property-paused',
+  description: 'Property "paused"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#dom-media-paused',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    finish('paused' in audio);
+  }
+})
+,({
+  name: 'property-muted',
+  description: 'Property "muted"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#dom-media-muted',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    if (!('muted' in audio)) {
+      finish(false);
+    }
+
+    audio.muted = true;
+    finish(audio.muted === true);
+  }
+})
+,({
+  name: 'property-duration',
+  description: 'Property "duration"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#dom-media-duration',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    finish('duration' in audio);
+  }
+})
+,({
+  name: 'property-defaultPlaybackRate',
+  description: 'Property "defaultPlaybackRate"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#dom-media-defaultplaybackrate',
+  reports: {
+    firefox: {
+      desc: 'Bug 495040 - Implement playbackRate and related bits ',
+      link: 'https://bugzilla.mozilla.org/show_bug.cgi?id=495040'
+    }
+  },
+  assert: function(finish) {
+    var audio = this.audio;
+
+    if (!('defaultPlaybackRate' in audio)) {
+      finish(false);
+    }
+
+    audio.defaultPlaybackRate = 0.5;
+    finish(audio.defaultPlaybackRate === 0.5);
+  }
+})
+,({
+  name: 'property-currentTime',
+  description: 'Property "currentTime"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#dom-media-currenttime',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('loadedmetadata', function() {
+      audio.currentTime = 1;
+      finish(audio.currentTime === 1);
+    }, false);
+
+    audio.src = AWPY.sound.mini.stream_url();
+  }
+})
+,({
+  name: 'property-buffered',
+  description: 'Property "buffered"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#dom-media-buffered',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('loadedmetadata', function() {
+      finish(audio.buffered && audio.buffered.length);
+    }, false);
+
+    audio.src = AWPY.sound.mini.stream_url();
+  }
+})
+,({
+  name: 'event-volumechange',
+  description: 'Event "volumechange"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#event-media-volumechange',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('volumechange', function() {
+      finish(true);
+    }, false);
+
+    audio.volume = 0.5;
+  }
+})
+,({
+  name: 'event-timeupdate',
+  description: 'Event "timeupdate"',
+  spec: 'http://dev.w3.org/html5/spec/media-elements.html#event-media-timeupdate',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('timeupdate', function() {
+      finish(true);
+    }, false);
+
+    audio.addEventListener('loadedmetadata', function() {
+      audio.volume = 0;
+      audio.play();
+    }, false);
+
+    audio.src = AWPY.sound.mini.stream_url();
+  }
+})
+,({
+  name: 'event-suspend',
+  description: 'Event "suspend"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#event-media-suspend',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('suspend', function() {
+      finish(true);
+    }, false);
+
+    audio.preload = 'metadata';
+    audio.src = AWPY.sound.short.stream_url();
+  }
+})
+,({
+  name: 'event-stalled',
+  description: 'Event "stalled"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#event-media-stalled',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('stalled', function() {
+      finish(true);
+    }, false);
+
+    audio.src = 'sounds/long.' + AWPY.config.codec + '/stall';
+  }
+})
+,({
+  name: 'event-seeking',
+  description: 'Event "seeking"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#event-media-seeking',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('seeking', function() {
+      finish(true);
+    }, false);
+
+    audio.addEventListener('loadedmetadata', function() {
+      audio.currentTime = AWPY.sound.long.duration / 2;
+    }, false);
+
+    audio.src = AWPY.sound.long.stream_url();
+  }
+})
+,({
+  name: 'event-seeked',
+  description: 'Event "seeked"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#event-media-seeked',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('seeked', function() {
+      finish(true);
+    }, false);
+
+    audio.addEventListener('loadedmetadata', function() {
+      audio.currentTime = 2;
+    }, false);
+
+    audio.src = AWPY.sound.mini.stream_url();
+  }
+})
+,({
+  name: 'event-ratechange',
+  description: 'Event "ratechange"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#event-media-ratechange',
+  reports: {
+    firefox: {
+      desc: 'Bug 495040 - Implement playbackRate and related bits ',
+      link: 'https://bugzilla.mozilla.org/show_bug.cgi?id=495040'
+    }
+  },
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('ratechange', function() {
+      finish(true);
+    }, false);
+
+    audio.playbackRate = 0.5;
+  }
+})
+,({
+  name: 'event-progress',
+  description: 'Event "progress"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#event-media-progress',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('progress', function() {
+      finish(true);
+    }, false);
+
+    audio.src = AWPY.sound.long.stream_url();
+  }
+})
+,({
+  name: 'event-playing',
+  description: 'Event "playing"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#event-media-playing',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('playing', function() {
+      finish(true);
+    }, false);
+
+    audio.addEventListener('loadedmetadata', function() {
+      audio.volume = 0;
+      audio.play();
+    }, false);
+
+    audio.src = AWPY.sound.mini.stream_url();
+  }
+})
+,({
+  name: 'event-play',
+  description: 'Event "play"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#event-media-play',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('play', function() {
+      finish(true);
+    }, false);
+
+    audio.addEventListener('loadedmetadata', function() {
+      audio.volume = 0;
+      audio.play();
+    }, false);
+
+    audio.src = AWPY.sound.mini.stream_url();
+  }
+})
+,({
+  name: 'event-pause',
+  description: 'Event "pause"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#event-media-pause',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('pause', function() {
+      finish(true);
+    }, false);
+
+    audio.addEventListener('loadedmetadata', function() {
+      audio.volume = 0;
+      audio.play();
+      audio.pause();
+    }, false);
+
+    audio.src = AWPY.sound.short.stream_url();
+  }
+})
+,({
+  name: 'event-loadstart',
+  description: 'Event "loadstart"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#event-media-loadstart',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('loadstart', function() {
+      finish(true);
+    }, false);
+
+    audio.src = AWPY.sound.mini.stream_url();
+  }
+})
+,({
+  name: 'event-loadedmetadata',
+  description: 'Event "loadedmetadata"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#event-media-loadedmetadata',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('loadedmetadata', function() {
+      finish(true);
+    }, false);
+
+    audio.src = AWPY.sound.short.stream_url();
+  }
+})
+,({
+  name: 'event-loadeddata',
+  description: 'Event "loadeddata"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#event-media-loadeddata',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('loadeddata', function() {
+      finish(true);
+    }, false);
+
+    audio.src = AWPY.sound.mini.stream_url();
+  }
+})
+,({
+  name: 'event-error',
+  description: 'Event "error"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#event-media-error',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('error', function() {
+      finish(true); // WIN
+    }, false);
+
+    audio.src = 'invalid:url';
+  }
+})
+,({
+  name: 'event-ended',
+  description: 'Event "ended"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#event-media-ended',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('ended', function() {
+      finish(true);
+    }, false);
+
+    audio.addEventListener('loadedmetadata', function() {
+      audio.volume = 0;
+      audio.play();
+    }, false);
+
+    audio.src = AWPY.sound.mini.stream_url();
+  }
+})
+,({
+  name: 'event-emptied',
+  description: 'Event "emptied"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#event-media-emptied',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('emptied', function() {
+      finish(true);
+    }, false);
+
+    audio.addEventListener('play', function() {
+      audio.src = AWPY.sound.short.stream_url();
+      audio.load();
+    }, false);
+
+    audio.addEventListener('loadedmetadata', function() {
+      audio.volume = 0;
+      audio.play();
+    }, false);
+
+    audio.src = AWPY.sound.mini.stream_url();
+  }
+})
+,({
+  name: 'event-durationchange',
+  description: 'Event "durationchange"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#event-media-durationchange',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('durationchange', function() {
+      finish(true); // WIN
+    }, false);
+
+    audio.src = AWPY.sound.mini.stream_url();
+  }
+})
+,({
+  name: 'event-canplaythrough',
+  description: 'Event "canplaythrough"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#event-media-canplaythrough',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('canplaythrough', function() {
+      finish(true); // WIN
+    }, false);
+
+    audio.src = AWPY.sound.mini.stream_url();
+  }
+})
+,({
+  name: 'event-canplay',
+  description: 'Event "canplay"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#event-media-canplay',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('canplay', function() {
+      finish(true); // WIN
+    }, false);
+
+    audio.src = AWPY.sound.mini.stream_url();
+  }
+})
+,({
+  name: 'event-abort',
+  description: 'Event "abort"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#event-media-abort',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('abort', function() {
+      finish(true); // WIN
+    }, false);
+
+    audio.addEventListener('loadstart', function() {
+      audio.src = '';
+      audio.load(); // Should trigger abort soon
+    }, false);
+
+    audio.src = AWPY.sound.short.stream_url();
+  }
+})
+,({
+  name: 'attribute-preload-metadata',
+  description: 'Attribute "preload" with value "metadata"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#attr-media-preload',
+  assert: function(finish) {
+    var audio = this.audio;
+
+    audio.addEventListener('loadedmetadata', function() {
+      setTimeout(function() {
+        audio.addEventListener('progress', function() {
+          finish(false); // Still loading data - FAIL
+        }, false);
+
+        setTimeout(function() {
+          finish(true); // Stoped loading data - WIN
+        }, 1000);
+      }, 1000); // Wait 1 sec
+    }, false);
+
+    audio.preload = 'metadata';
+    audio.src = AWPY.sound.short.stream_url();
+  }
+})
+,({
+  name: 'attribute-loop',
+  description: 'Attribute "loop"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#attr-media-loop',
+  assert: function(finish) {
+    var audio = this.audio;
+    var counter = 0;
+
+    audio.addEventListener('seeked', function() {
+      if (++counter === 2) {
+        if (audio.loop !== true) {
+          finish(false);
+        }
+        audio.loop = false;
+      }
+    }, false);
+
+    audio.addEventListener('ended', function() {
+      finish(counter === 2);
+    }, false);
+
+    try {
+      if (audio.loop !== false) {
+        finish(false);
+      }
+    } catch (e) {
+      finish(false);
+    }
+    audio.loop = true;
+
+    audio.src = AWPY.sound.mini.stream_url();
+    audio.volume = 0;
+    audio.play();
+  }
+})
+,({
+  name: 'attribute-autoplay',
+  description: 'Attribute "autoplay"',
+  spec: 'http://dev.w3.org/html5/spec/the-iframe-element.html#attr-media-autoplay',
+  assert: function(finish) {
+    var audio = this.audio;
+    audio.addEventListener('loadedmetadata', function() {
+      audio.volume = 0;
+      audio.addEventListener('timeupdate', function() {
+        finish(true);
+      }, false);
+    }, false);
+
+    audio.autoplay = true;
+    audio.src = AWPY.sound.mini.stream_url();
+  }
+})
+]);
+    AWPY.runner.init();
+    AWPY.UI.toggleInfo();
+  </script>
+</body>
+</html>
