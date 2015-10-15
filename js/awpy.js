@@ -117,7 +117,7 @@ AWPY.sound = (function() {
 
   Object.keys(sounds).forEach(function(type) {
     sounds[type].stream_url = function(cache, codec_type) {
-      return 'http://areweplayingyet.herokuapp.com/sounds/' + type + '.' + (codec_type ? codec_type : AWPY.config.codec) + (cache ? '' : '?' + (Math.random() * 1e9 | 0));
+      return 'https://cielavenir.github.io/areweplayingyet/sounds/' + type + '.' + (codec_type ? codec_type : AWPY.config.codec) + (cache ? '' : '?' + (Math.random() * 1e9 | 0));
     };
   });
 
